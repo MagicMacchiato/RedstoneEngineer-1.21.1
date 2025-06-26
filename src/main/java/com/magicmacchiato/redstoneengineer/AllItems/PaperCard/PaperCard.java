@@ -1,4 +1,4 @@
-package com.example.examplemod.AllItems;
+package com.magicmacchiato.redstoneengineer.AllItems.PaperCard;
 
 import net.minecraft.world.item.Item;
 

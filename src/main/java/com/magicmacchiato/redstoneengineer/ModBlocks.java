@@ -1,9 +1,9 @@
-package com.example.examplemod;
+package com.magicmacchiato.redstoneengineer;
 
-import com.example.examplemod.AllBlocks.RotorBlock;
+import com.magicmacchiato.redstoneengineer.AllBlocks.RotorBlock;
 import com.tterrag.registrate.util.entry.BlockEntry;
 
-import static com.example.examplemod.Core.ExampleMod.REGISTRATE;
+import static com.magicmacchiato.redstoneengineer.Core.RedstoneEngineer.REGISTRATE;
 
 public class ModBlocks {
 

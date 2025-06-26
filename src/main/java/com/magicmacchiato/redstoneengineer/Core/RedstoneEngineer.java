@@ -1,8 +1,10 @@
-package com.example.examplemod.Core;
+package com.magicmacchiato.redstoneengineer.Core;
 
-import com.example.examplemod.AllItems.ModItems;
-import com.example.examplemod.ModBlockEntities;
-import com.example.examplemod.ModBlocks;
+import com.magicmacchiato.redstoneengineer.AllItems.ModItems;
+import com.magicmacchiato.redstoneengineer.ModBlockEntities;
+import com.magicmacchiato.redstoneengineer.ModBlocks;
+import com.magicmacchiato.redstoneengineer.ModDataComponents;
+import com.magicmacchiato.redstoneengineer.ModCreativeModeTabs;
 import com.tterrag.registrate.Registrate;
 import com.tterrag.registrate.util.nullness.NonNullSupplier;
 import org.slf4j.Logger;
@@ -21,22 +23,24 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.neoforged.neoforge.common.NeoForge;
 import net.neoforged.neoforge.event.server.ServerStartingEvent;
 
-@Mod(ExampleMod.MODID)
-public class ExampleMod{
-    public static final String MODID = "examplemod";
+@Mod(RedstoneEngineer.MODID)
+public class RedstoneEngineer {
+    public static final String MODID = "redstoneengineer";
     private static final Logger LOGGER = LogUtils.getLogger();
 
     public static final NonNullSupplier<Registrate> REGISTRATE = NonNullSupplier.lazy(() -> Registrate.create(MODID));
 
 
 
-    public ExampleMod(IEventBus modEventBus, ModContainer modContainer){
+    public RedstoneEngineer(IEventBus modEventBus, ModContainer modContainer){
         modEventBus.addListener(this::commonSetup);
         NeoForge.EVENT_BUS.register(this);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
 
-        ModBlocks.init();
+        ModCreativeModeTabs.init(modEventBus);
         ModItems.init();
+        ModDataComponents.init(modEventBus);
+        ModBlocks.init();
         ModBlockEntities.init();
     }
 
@@ -49,7 +53,7 @@ public class ExampleMod{
     public void onServerStarting(ServerStartingEvent event){
     }
 
-    @EventBusSubscriber(modid = MODID, bus = EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    @EventBusSubscriber(modid = MODID, value = Dist.CLIENT)
     public static class ClientModEvents{
 
         @SubscribeEvent

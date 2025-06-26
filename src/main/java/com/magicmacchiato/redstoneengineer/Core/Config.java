@@ -1,4 +1,4 @@
-package com.example.examplemod.Core;
+package com.magicmacchiato.redstoneengineer.Core;
 
 import java.util.List;
 

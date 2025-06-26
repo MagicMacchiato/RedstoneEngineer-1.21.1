@@ -1,7 +1,7 @@
-package com.example.examplemod.AllBlocks.BlockEntities;
+package com.magicmacchiato.redstoneengineer.AllBlocks.BlockEntities;
 
-import com.example.examplemod.AllItems.ModItems;
-import com.example.examplemod.ModBlockEntities;
+import com.magicmacchiato.redstoneengineer.AllItems.ModItems;
+import com.magicmacchiato.redstoneengineer.ModBlockEntities;
 import com.tterrag.registrate.builders.BlockEntityBuilder;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
